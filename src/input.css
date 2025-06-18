@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-inconsolata {
+    font-family: 'Inconsolata', monospace;
+  }
+}
+
+@layer components {
+    .divContainer {
+      @apply relative w-full min-h-screen;
+
+      .patternLine {
+        @apply absolute inset-0 w-full h-full top-0;
+      }
+
+      .patternCircle {
+        @apply absolute bottom-0 w-full h-full -z-10;
+      }
+
+      .squigglyBottom {
+        @apply absolute bottom-0 -left-24  object-contain -z-10;
+      }
+      
+      .squigglyTop {
+        @apply absolute top-20 right-0 object-contain -z-10; 
+      }
+    }
+}
