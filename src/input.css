@@ -2,19 +2,23 @@
 
 @layer utilities {
   .font-inconsolata {
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Inconsolata', monospace;  
   }
 }
 
 @layer components {
-    .divContainer {
+    .backgroundContainer {
       @apply relative w-full min-h-screen;
 
       .patternLine {
-        @apply absolute inset-0 w-full h-full top-0;
+        @apply absolute bottom-0 w-full;
       }
 
       .patternCircle {
+        @apply absolute bottom-52 right-52  z-10;
+      }
+
+      .backgroundMain {
         @apply absolute bottom-0 w-full h-full -z-10;
       }
 
@@ -26,4 +30,29 @@
         @apply absolute top-20 right-0 object-contain -z-10; 
       }
     }
+
+    .contentContainer {
+      @apply relative z-10 ;
+
+      .header {
+        @apply flex justify-center p-5;
+      }
+      .mainSection {
+        @apply flex flex-col justify-center items-center text-[hsl(252,6%,83%)];
+
+        h1 {
+          @apply text-5xl font-bold text-white max-w-2xl text-center;
+        }
+        p {
+          @apply text-xl;
+        }
+        input {
+          @apply border border-[hsl(245,19%,35%)]  rounded-lg bg-transparent w-full p-2 mb-5;
+        }
+        button {
+          @apply bg-[hsl(7,88%,67%)] text-center w-full py-2 mb-5 rounded-lg;
+        }
+      }
+    }
+   
 }

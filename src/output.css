@@ -7,7 +7,17 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-white: #fff;
     --spacing: 0.25rem;
+    --container-2xl: 42rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --font-weight-bold: 700;
+    --radius-lg: 0.5rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -158,26 +168,46 @@
   }
 }
 @layer utilities {
-  .absolute {
-    position: absolute;
-  }
   .static {
     position: static;
   }
-  .right-52 {
-    right: calc(var(--spacing) * 52);
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
   }
-  .bottom-52 {
-    bottom: calc(var(--spacing) * 52);
-  }
-  .z-50 {
-    z-index: 50;
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
   }
   .contents {
     display: contents;
   }
+  .flex {
+    display: flex;
+  }
   .table {
     display: table;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .border-dashed {
+    --tw-border-style: dashed;
+    border-style: dashed;
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .px-20 {
+    padding-inline: calc(var(--spacing) * 20);
+  }
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
   }
   .outline {
     outline-style: var(--tw-outline-style);
@@ -193,18 +223,22 @@
   }
 }
 @layer components {
-  .divContainer {
+  .backgroundContainer {
     position: relative;
     min-height: 100vh;
     width: 100%;
     .patternLine {
       position: absolute;
-      inset: calc(var(--spacing) * 0);
-      top: calc(var(--spacing) * 0);
-      height: 100%;
+      bottom: calc(var(--spacing) * 0);
       width: 100%;
     }
     .patternCircle {
+      position: absolute;
+      right: calc(var(--spacing) * 52);
+      bottom: calc(var(--spacing) * 52);
+      z-index: 10;
+    }
+    .backgroundMain {
       position: absolute;
       bottom: calc(var(--spacing) * 0);
       z-index: calc(10 * -1);
@@ -224,6 +258,53 @@
       right: calc(var(--spacing) * 0);
       z-index: calc(10 * -1);
       object-fit: contain;
+    }
+  }
+  .contentContainer {
+    position: relative;
+    z-index: 10;
+    .header {
+      display: flex;
+      justify-content: center;
+      padding: calc(var(--spacing) * 5);
+    }
+    .mainSection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: hsl(252,6%,83%);
+      h1 {
+        max-width: var(--container-2xl);
+        text-align: center;
+        font-size: var(--text-5xl);
+        line-height: var(--tw-leading, var(--text-5xl--line-height));
+        --tw-font-weight: var(--font-weight-bold);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-white);
+      }
+      p {
+        font-size: var(--text-xl);
+        line-height: var(--tw-leading, var(--text-xl--line-height));
+      }
+      input {
+        margin-bottom: calc(var(--spacing) * 5);
+        width: 100%;
+        border-radius: var(--radius-lg);
+        border-style: var(--tw-border-style);
+        border-width: 1px;
+        border-color: hsl(245,19%,35%);
+        background-color: transparent;
+        padding: calc(var(--spacing) * 2);
+      }
+      button {
+        margin-bottom: calc(var(--spacing) * 5);
+        width: 100%;
+        border-radius: var(--radius-lg);
+        background-color: hsl(7,88%,67%);
+        padding-block: calc(var(--spacing) * 2);
+        text-align: center;
+      }
     }
   }
 }
@@ -285,6 +366,15 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -302,6 +392,8 @@
       --tw-drop-shadow-color: initial;
       --tw-drop-shadow-alpha: 100%;
       --tw-drop-shadow-size: initial;
+      --tw-font-weight: initial;
+      --tw-border-style: solid;
     }
   }
 }
