@@ -15,7 +15,7 @@
       }
 
       .patternCircle {
-        @apply absolute bottom-52 right-52  z-10;
+        @apply absolute bottom-52 right-52 z-10;
       }
 
       .backgroundDesktop {
