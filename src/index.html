@@ -24,8 +24,15 @@
     <!-- pattern circle -->
     <img src="../assets/images/pattern-circle.svg" alt="pattern-circle" class="patternCircle" />
 
-    <!-- Top background image -->
-    <img src="../assets/images/background-desktop.png" alt="main-background" class="backgroundMain" />
+    <!--  background image desktop -->
+    <img src="../assets/images/background-desktop.png" alt="desktop-background" class="backgroundDesktop" />
+
+    <!--  background image mobile -->
+    <img src="../assets/images/background-mobile.png" alt="mobile-background" class="backgroundMobile">
+
+    <!-- background image tablet -->
+     <img src="../assets/images/background-tablet.png" alt="tablet-background"
+     class="backgroundTablet">
 
     <!-- Bottom squiggly line -->
     <img src="../assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="squiggly-line-bottom"
@@ -42,15 +49,21 @@
         <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
         <p>Secure your spot at next year's biggest coding conference.</p>
         <form action="" class="p-4">
-          <table class="">
+          <table>
             <tr class="flex flex-col">
-              <td><label for="uploadAvatar">Upload Avatar</label></td>
-              <td><input type="file" name="uploadAvatar" id="uploadAvatar" accept="image/*" placeholder="Drag and drop or click to upload" class="px-20 py-10 mb-2 border-dashed"></td>
-              <td><label for="uploadAvatar"><div class="flex gap-2 text-sm mb-5"><img src="../assets/images/icon-info.svg" alt="icon-info" >Upload your photo (JPG or  PNG, max size: 500KB).</div></label></td>
+              <td><label for="uploadAvatar" >Upload Avatar</label></td>
+              <td><input type="file" name="uploadAvatar" id="uploadAvatar" accept="image/*"
+                  placeholder="Drag and drop or click to upload" class="px-20 py-10 mb-2 border-dashed"></td>
+              <td>
+                <div class="flex gap-2 text-sm mb-5"><img src="../assets/images/icon-info.svg" alt="icon-info">
+                  <span class="text-sm"> Upload
+                  your photo (JPG or PNG, max size: 500KB).</span>
+                </div>
+              </td>
             </tr>
             <tr class="flex flex-col">
               <td><label for="fullName">Full Name</label></td>
-              <td><input type="text" id="fullName" name="fullName" ></td>
+              <td><input type="text" id="fullName" name="fullName"></td>
             </tr>
             <tr class="flex flex-col">
               <td><label for="emailId">Email Address</label></td>
