@@ -12,18 +12,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;800&display=swap" rel="stylesheet">
 
   <title>Conference ticket generator</title>
+
 </head>
 
 <body>
-  <div class="divContainer">
+  <div class="backgroundContainer font-inconsolata">
+    <!-- background -->
     <!-- pattern lines -->
     <img src="../assets/images/pattern-lines.svg" alt="pattern-lines" class="patternLine">
 
     <!-- pattern circle -->
-    <img src="../assets/images/pattern-circle.svg" alt="pattern-circle" class="absolute bottom-52 right-52  z-50" />
+    <img src="../assets/images/pattern-circle.svg" alt="pattern-circle" class="patternCircle" />
 
     <!-- Top background image -->
-    <img src="../assets/images/background-desktop.png" alt="main-background" class="patternCircle" />
+    <img src="../assets/images/background-desktop.png" alt="main-background" class="backgroundMain" />
 
     <!-- Bottom squiggly line -->
     <img src="../assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="squiggly-line-bottom"
@@ -31,6 +33,40 @@
 
     <!-- top squiggly line -->
     <img src="../assets/images/pattern-squiggly-line-top.svg" alt="squiggly-line-top" class="squigglyTop">
+    <!-- content -->
+    <div class="contentContainer">
+      <header class="header">
+        <img src="../assets/images/logo-full.svg" alt="logo">
+      </header>
+      <main class="mainSection">
+        <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+        <form action="" class="p-4">
+          <table class="">
+            <tr class="flex flex-col">
+              <td><label for="uploadAvatar">Upload Avatar</label></td>
+              <td><input type="file" name="uploadAvatar" id="uploadAvatar" accept="image/*" placeholder="Drag and drop or click to upload" class="px-20 py-10 mb-2 border-dashed"></td>
+              <td><label for="uploadAvatar"><div class="flex gap-2 text-sm mb-5"><img src="../assets/images/icon-info.svg" alt="icon-info" >Upload your photo (JPG or  PNG, max size: 500KB).</div></label></td>
+            </tr>
+            <tr class="flex flex-col">
+              <td><label for="fullName">Full Name</label></td>
+              <td><input type="text" id="fullName" name="fullName" ></td>
+            </tr>
+            <tr class="flex flex-col">
+              <td><label for="emailId">Email Address</label></td>
+              <td><input type="email" name="emailId" id="emailId" placeholder="you@example.com"></td>
+            </tr>
+            <tr class="flex flex-col">
+              <td><label for="gitUserName">GitHub Username</label></td>
+              <td><input type="text" name="gitUserName" id="gitUserName" placeholder="@yourusername"></td>
+            </tr>
+            <tr>
+              <td><button type="submit">Generate My Ticket</button></td>
+            </tr>
+          </table>
+        </form>
+      </main>
+    </div>
   </div>
 </body>
 
